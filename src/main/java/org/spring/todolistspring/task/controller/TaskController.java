@@ -58,7 +58,6 @@ public class TaskController {
     public ResponseEntity<?> getAll(@RequestParam(defaultValue = "0") int page,
                                     @RequestParam(defaultValue = "5") int size) {
         List<TaskDto> tasks = taskService.getAll(page, size);
-        System.out.println(tasks.toString());
         return tasks.isEmpty() ? ResponseEntity.badRequest().body("No task found")
                 : ResponseEntity.ok(tasks);
     }
@@ -82,6 +81,3 @@ public class TaskController {
                 : ResponseEntity.ok(tasks);
     }
 }
-// из сервиса
-//потетря соединения  с бд
-//хандле р

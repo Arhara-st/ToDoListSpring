@@ -64,7 +64,6 @@ public class TaskService {
     public List<TaskDto> getAll(int pageNumber, int pageSize) {
         PageRequest pageRequest = PageRequest.of(pageNumber, pageSize);
         Page<Task> taskPage = taskRepository.findAll(pageRequest);
-        System.out.println(taskPage.getContent());
         return taskMapper.toDto(taskPage.getContent());
     }
 
